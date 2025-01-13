@@ -3,108 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Business Requirements Document (BRD) - Financial KPI Dashboard</title>
-  <style>
-    body {
-      font-family: "Calibri", sans-serif;
-      font-size: 22px;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-
-    /* Page container */
-    .page {
-      width: 85%; /* standard letter size width */
-      margin: 0 auto;
-      padding: 1in;
-      background-color: #fff;
-      box-sizing: border-box;
-    }
-
-    /* Header styling */
-    .header {
-      text-align: center;
-      padding: 20px 0;
-      border-bottom: 2px solid #B76E79; /* Rose gold border */
-      margin-bottom: 20px;
-    }
-    .header h1 {
-      color: #B76E79; /* Rose gold text */
-      font-size: 32px;
-      margin: 0;
-      font-weight: 700;
-    }
-    .header h2 {
-      color: #D4AF37; /* Gold text */
-      font-size: 20px;
-      margin-top: 5px;
-      font-weight: 500;
-    }
-
-    /* Section heading styling */
-    h3 {
-      color: #B76E79; /* Rose gold heading */
-      border-left: 5px solid #D4AF37; /* Gold line */
-      padding-left: 10px;
-      margin-top: 30px;
-      font-weight: 700;
-    }
-
-    /* Subsection heading styling */
-    h4 {
-      color: #D4AF37; /* Gold heading */
-      margin-top: 20px;
-      font-weight: 600;
-    }
-
-    /* Paragraph styling */
-    p {
-      line-height: 1.5;
-      margin: 10px 0;
-    }
-
-    /* Table of Contents styling */
-    .toc {
-      margin: 20px 0;
-      padding: 10px;
-      background-color: #F8F8F8;
-      border: 1px solid #DDD;
-    }
-    .toc h4 {
-      margin-top: 0;
-    }
-    .toc ul {
-      margin: 0;
-      padding: 0 20px;
-      list-style: none;
-    }
-    .toc li {
-      margin: 6px 0;
-    }
-    .toc a {
-      text-decoration: none;
-      color: #B76E79; /* Rose gold links */
-    }
-    .toc a:hover {
-      color: #D4AF37; /* Gold hover */
-      text-decoration: underline;
-    }
-
-    /* Footer styling */
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 12px;
-      color: #999;
-    }
-
-    /* Decorative horizontal rule */
-    hr {
-      border: none;
-      border-top: 2px solid #D4AF37; /* Gold */
-      margin: 30px 0;
-    }
-  </style>
+  <!-- Link to the external stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="page">
@@ -197,7 +97,7 @@
     <h3 id="success-criteria">6. Success Criteria</h3>
     <ul>
       <li><strong>Reliable Data Retrieval:</strong> All key KPIs are accurate and up-to-date.</li>
-      <li><strong>Low Latency:</strong> API requests return within acceptable time (<1s in normal scenarios).</li>
+      <li><strong>Low Latency:</strong> API requests return within acceptable time (&lt;1s in normal scenarios).</li>
       <li><strong>Scalability:</strong> Minimal code changes needed to add new years or metrics.</li>
       <li><strong>Security & Compliance:</strong> Database credentials and sensitive information are protected.</li>
     </ul>
@@ -216,11 +116,11 @@
 
     <!-- Footer -->
     <div class="footer">
-        <p>
-        © 2025 Financial KPI Dashboard BRD by Makayla Anderson-Tucker.
+      <p>
+        © 2025 Financial KPI Dashboard. All rights reserved.
         <br/>
         <a href="https://github.com/makaylacodes/kpi-api-server" target="_blank">GitHub Repository</a>
-        </p>
+      </p>
     </div>
   </div>
 </body>
