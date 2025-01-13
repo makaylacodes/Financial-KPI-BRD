@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Business Requirements Document (BRD) - Financial KPI Dashboard</title>
+  <style>
+    body {
+      font-family: "Calibri", sans-serif;
+      font-size: 22px;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    /* Page container */
+    .page {
+      width: 85%; /* standard letter size width */
+      margin: 0 auto;
+      padding: 1in;
+      background-color: #fff;
+      box-sizing: border-box;
+    }
+
+    /* Header styling */
+    .header {
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 2px solid #B76E79; /* Rose gold border */
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      color: #B76E79; /* Rose gold text */
+      font-size: 32px;
+      margin: 0;
+      font-weight: 700;
+    }
+    .header h2 {
+      color: #D4AF37; /* Gold text */
+      font-size: 20px;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    /* Section heading styling */
+    h3 {
+      color: #B76E79; /* Rose gold heading */
+      border-left: 5px solid #D4AF37; /* Gold line */
+      padding-left: 10px;
+      margin-top: 30px;
+      font-weight: 700;
+    }
+
+    /* Subsection heading styling */
+    h4 {
+      color: #D4AF37; /* Gold heading */
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    /* Paragraph styling */
+    p {
+      line-height: 1.5;
+      margin: 10px 0;
+    }
+
+    /* Table of Contents styling */
+    .toc {
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #F8F8F8;
+      border: 1px solid #DDD;
+    }
+    .toc h4 {
+      margin-top: 0;
+    }
+    .toc ul {
+      margin: 0;
+      padding: 0 20px;
+      list-style: none;
+    }
+    .toc li {
+      margin: 6px 0;
+    }
+    .toc a {
+      text-decoration: none;
+      color: #B76E79; /* Rose gold links */
+    }
+    .toc a:hover {
+      color: #D4AF37; /* Gold hover */
+      text-decoration: underline;
+    }
+
+    /* Footer styling */
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* Decorative horizontal rule */
+    hr {
+      border: none;
+      border-top: 2px solid #D4AF37; /* Gold */
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>Business Requirements Document</h1>
+      <h2>Financial KPI Dashboard</h2>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h4>Table of Contents</h4>
+      <ul>
+        <li><a href="#project-overview">1. Project Overview</a></li>
+        <li><a href="#objectives">2. Objectives</a></li>
+        <li><a href="#scope-requirements">3. Scope & Requirements</a></li>
+        <li><a href="#stakeholders">4. Stakeholders</a></li>
+        <li><a href="#timeline">5. Timeline / Roadmap</a></li>
+        <li><a href="#success-criteria">6. Success Criteria</a></li>
+        <li><a href="#glossary">7. Glossary</a></li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <!-- 1. Project Overview -->
+    <h3 id="project-overview">1. Project Overview</h3>
+    <p>
+      The Financial KPI Dashboard aims to provide a real-time, centralized view 
+      of key financial metrics (e.g., revenue, gross profit, net profit, and utilization rates).
+      The backend service will connect to a MongoDB database, store data in year-specific 
+      collections, and serve these metrics through an API.
+    </p>
+
+    <!-- 2. Objectives -->
+    <h3 id="objectives">2. Objectives</h3>
+    <h4>2.1 Business Objectives</h4>
+    <p>
+      - Offer executives and finance teams quick, reliable, and consistent access to critical KPIs.<br/>
+      - Simplify data retrieval by year, quarter, and specific KPI type.
+    </p>
+
+    <h4>2.2 Technical Objectives</h4>
+    <p>
+      - Implement a scalable data model in MongoDB (one collection per year).<br/>
+      - Maintain an extensible Node.js/Express code structure for future expansions (new metrics, additional years).
+    </p>
+
+    <!-- 3. Scope & Requirements -->
+    <h3 id="scope-requirements">3. Scope & Requirements</h3>
+    <h4>3.1 In-Scope</h4>
+    <p>
+      - RESTful API endpoints (GET routes) to fetch KPI data by year, quarter, or metric type.<br/>
+      - Error handling for invalid or missing data (returning 404 or 400 as appropriate).<br/>
+      - Logging/monitoring using integrated middleware (Morgan or a custom logger).
+    </p>
+    <h4>3.2 Out-of-Scope</h4>
+    <p>
+      - Complex analytics beyond retrieving stored values.<br/>
+      - Front-end UI or dashboard implementation (to be handled by a separate project).
+    </p>
+    <h4>3.3 Technical Requirements</h4>
+    <p>
+      - Node.js LTS (16+).<br/>
+      - MongoDB 4.4+ (local or Atlas).<br/>
+      - Environment variables for PORT and MONGODB_URI.
+    </p>
+
+    <!-- 4. Stakeholders -->
+    <h3 id="stakeholders">4. Stakeholders</h3>
+    <p>
+      <strong>Project Sponsor:</strong> Boxx Leadership / Finance Department<br/>
+      <strong>Technical Team:</strong> Full-stack developers, DevOps, QA<br/>
+      <strong>Finance Stakeholders:</strong> CFO, finance analysts<br/>
+      <strong>Others:</strong> External clients or third parties needing KPI access
+    </p>
+
+    <!-- 5. Timeline / Roadmap -->
+    <h3 id="timeline">5. Timeline / Roadmap</h3>
+    <h4>5.1 Phases</h4>
+    <p>
+      - <strong>Phase 1:</strong> Database schema design and backend architecture (Complete)<br/>
+      - <strong>Phase 2:</strong> Dashboard front-end integration with the API<br/>
+      - <strong>Phase 3:</strong> Security enhancements (authentication, HTTPS, etc.)<br/>
+      - <strong>Phase 4:</strong> Extended analytics (monthly data, advanced calculations)
+    </p>
+
+    <!-- 6. Success Criteria -->
+    <h3 id="success-criteria">6. Success Criteria</h3>
+    <ul>
+      <li><strong>Reliable Data Retrieval:</strong> All key KPIs are accurate and up-to-date.</li>
+      <li><strong>Low Latency:</strong> API requests return within acceptable time (<1s in normal scenarios).</li>
+      <li><strong>Scalability:</strong> Minimal code changes needed to add new years or metrics.</li>
+      <li><strong>Security & Compliance:</strong> Database credentials and sensitive information are protected.</li>
+    </ul>
+
+    <!-- 7. Glossary -->
+    <h3 id="glossary">7. Glossary</h3>
+    <p>
+      <strong>KPI (Key Performance Indicator):</strong> A measurable value that demonstrates 
+      how effectively a company is achieving its key objectives.<br/>
+      <strong>MongoDB:</strong> A NoSQL database storing data in flexible JSON-like documents.<br/>
+      <strong>Quarter (Q1–Q4):</strong> A three-month period in a company's financial year.<br/>
+      <strong>Utilization Rates:</strong> Percentage of available resources actively contributing to projects.
+    </p>
+
+    <hr />
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>
+        © 2025 Financial KPI Dashboard BRD by Makayla Anderson-Tucker.
+        <br/>
+        <a href="https://github.com/makaylacodes/kpi-api-server" target="_blank">GitHub Repository</a>
+        </p>
+    </div>
+  </div>
+</body>
+</html>
